@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace NetService
-{
-  public interface IHttpService
-  {
+namespace NetService {
+  public interface IHttpService {
     IHttpRequest Get(string uri);
     IHttpRequest Head(string uri);
     IHttpRequest Post(string uri, string postData);
@@ -18,7 +16,7 @@ namespace NetService
     IHttpRequest Put(string uri, byte[] bodyData);
     IHttpRequest Put(string uri, string bodyData);
     IHttpRequest Delete(string uri);
-    IEnumerator Send(IHttpRequest request, Action<HttpResponse> onSuccess = null, Action<HttpResponse> onError = null, Action<HttpResponse> onNetworkError = null);
+    IEnumerator Send(IHttpRequest request);
     void Abort(IHttpRequest request);
   }
 }
